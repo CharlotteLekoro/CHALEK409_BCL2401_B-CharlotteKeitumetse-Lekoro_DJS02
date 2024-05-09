@@ -1,4 +1,5 @@
 
+
 const form = document.querySelector("[data-form]");
 const result = document.querySelector("[data-result]");
 
@@ -10,6 +11,9 @@ form.addEventListener("submit", (event) => {
   // Check if either or both inputs are empty
   if (dividend === "" || divider === "") {
     result.innerText = "Division not performed. Both values are required in inputs. Try again.";
+  } else if (divider == 0) {
+    result.innerText = "Division not performed. Invalid number provided. Try again.";
+    console.error(new Error('Division by zero'));
   } else {
     // Perform the division
     const quotient = dividend / divider;
