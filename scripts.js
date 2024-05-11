@@ -21,6 +21,14 @@ form.addEventListener("submit", (event) => {
     // Display the result without any decimal
     result.innerText = quotient.toFixed(0);
   }
+
+  if (dividend.toLowerCase() === "yolo" && divider === "+++") {
+    result.classList.add("critical-error");
+    result.innerHTML =
+      "Something critical went wrong. Please reload the page";
+    console.error("Something critical went wrong. Please reload the page");
+    return;
+  }
 });
 
 
